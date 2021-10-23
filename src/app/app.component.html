@@ -1,0 +1,5 @@
+<button (click)="getUsers()" [disabled]="loading">
+  {{ loading ? 'Loading...' : 'Get Users' }}
+</button>
+
+<div class="error">{{error}}</div>
