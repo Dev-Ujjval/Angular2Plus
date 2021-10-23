@@ -1,0 +1,17 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  templateUrl: './child.component.html',
+  styleUrls: ['./child.component.css']
+})
+export class ChildComponent implements OnInit {
+
+  message = 'Welcome to the_lunitik_boy asylum';
+  
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
