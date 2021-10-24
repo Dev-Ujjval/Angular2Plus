@@ -1,0 +1,34 @@
+<div class="jumbotron">
+    <div class="container text-center">
+        <h1>Welcome to MyPortal</h1>
+    </div>
+</div>
+<div class="container">
+    <h2>Account Access Information</h2>
+    <p><strong>Note:</strong> The <strong>Account</strong> access by only authorize user</p>
+    <accordion [isAnimated]="true">
+        <accordion-group heading="Login">
+            <ul>
+                <li>
+                    Login for registered user.
+                </li>
+                <li>
+                    Login and access your account.
+                </li>
+            </ul>
+            <span><a [routerLink]="['/login']">Click Here</a> For Login</span>
+
+        </accordion-group>
+        <accordion-group heading="Sign up">
+            <ul>
+                <li>
+                    Sign up for new user.
+                </li>
+                <li>
+                    Sign up and create your new account.
+                </li>
+            </ul>
+            <span><a [routerLink]="['/register']" routerLinkActive="router-link-active" >Click Here</a> For sign up</span>
+        </accordion-group>
+    </accordion>
+</div>

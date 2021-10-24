@@ -1,0 +1,26 @@
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/material.css';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
+
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+/* You can add global styles to this file, and also import other style files */
+
+.ng-valid.ng-dirty:not(form) {
+    border: solid 2px lightgreen;
+  }
+  
+  .ng-invalid.ng-dirty:not(form), .ng-invalid:not(form).form-submitted {
+    border: solid 2px lightcoral;
+  }
+
+  .mt-10 {
+    margin-top: 10px;
+  }
+
+  .goog-te-banner-frame.skiptranslate {
+    display: none !important;
+    }
+  body {
+    top: 0px !important;
+    }

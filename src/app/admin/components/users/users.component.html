@@ -1,0 +1,51 @@
+<div>
+    <ngx-datatable #myTable class="material" [rows]="rows" [columnMode]="'force'" [headerHeight]="50"
+        [footerHeight]="50" [rowHeight]="60" [externalPaging]="true" [limit]="pagination.limit"
+        [count]="pagination.count" [offset]="pagination.offset" (page)="onPage($event)">
+
+        <ngx-datatable-column name="Id">
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Email">
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="FullName" prop="first_name">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+                {{row.first_name}} {{row.last_name}}
+            </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="Profile" prop="avatar">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+                <img class="ngx-img" src={{row.avatar}}>
+            </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="Action">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+                <button class="btn btn-primary" (click)="openModal(template, row)">view</button>
+            </ng-template>
+        </ngx-datatable-column>
+
+    </ngx-datatable>
+
+    <ng-template #template>
+        <div class="modal-header" *ngFor="let item of items">
+            <div>
+                <h4 class="modal-title pull-left">{{item.fullname}}</h4><br>
+                <label>Email: </label> {{item.email}}
+            </div>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div *ngFor="let item of items">
+
+                <div>
+                    <img class="center" src={{item.avatar}}>
+                </div>
+
+            </div>
+        </div>
+    </ng-template>
+</div>

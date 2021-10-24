@@ -1,0 +1,53 @@
+<div class="container">
+  <h2>Register into Account</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <div>
+        <label>eg. eve.holt@reqres.in</label>
+      </div>
+
+      <input type="email" class="form-control" [ngClass]="{'form-submitted': isRegisterFormSubmitted}"
+        formControlName="email" placeholder="Enter Email">
+      <div class="text-danger"
+        *ngIf="(registerForm.controls['email'].invalid && (isRegisterFormSubmitted || registerForm.controls['email'].dirty || registerForm.controls['email'].touched))">
+        <span *ngIf="registerForm.controls['email'].hasError('required') ">
+          Email is required
+        </span>
+        <span *ngIf="registerForm.controls['email'].hasError('pattern') ">
+          Invalid Email address
+        </span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password</label>
+      <div>
+        <label>eg. pistol</label>
+      </div>
+
+      <input type="password" class="form-control" [ngClass]="{'form-submitted': isRegisterFormSubmitted}"
+        formControlName="password" maxlength="100" placeholder="Enter password">
+      <div
+        *ngIf="(registerForm.controls['password'].invalid && (isRegisterFormSubmitted || registerForm.controls['password'].dirty || registerForm.controls['password'].touched))"
+        class="text-danger">
+        <span *ngIf="registerForm.controls['password'].hasError('required') ">
+          Password is required
+        </span>
+        <label *ngIf="registerForm.controls['password'].errors.minlength" class="error">password must be at least 4
+          character long</label>
+        <label *ngIf="registerForm.controls['password'].errors.maxlength" class="error">password must be maximum of
+          100
+          character</label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <div class="mt-10">
+    <alert type="success" *ngIf="showSuccess">
+      <h4 class="alert-heading">Well done!</h4>
+      <p>you are registered successfully.</p>
+      <p class="mb-0">Please click on login tab to continue with your account</p>
+    </alert>
+  </div>
+
+</div>

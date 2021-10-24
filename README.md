@@ -1,0 +1,1 @@
+https://www.freakyjolly.com/angular-7-6-add-data-tables-with-ultimate-features-in-few-steps/
