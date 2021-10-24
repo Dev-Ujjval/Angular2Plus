@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body>
+  <div ng-app="myApp" ng-controller="myCtrl">
+    <button id="page1" ng-click="setvalue('page1')">Page1</button>
+    <button id="page2" ng-click="setvalue('page2')">Page2</button>
+  </div>
+
+  <script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function ($scope, $window) {
+      $scope.watchPage = null;
+
+      $scope.setvalue = function (page) {
+        $scope.watchPage = page;
+
+      }
+      $scope.$watch('watchPage', function(newNames, oldNames) {
+
+        $scope.addHistory();
+    	});
+
+      $scope.addHistory = function () {
+        console.log('called..');
+        var state = $scope.watchPage;
+        if(state != null) {
+          var title = 'Pages';
+          var url = location.origin;
+          debugger
+          $window.top.history.pushState(state, title, url + '/content/?tab=' + state);
+        }
+
+      }
+
+      $window.top.onpopstate = function () {
+        //history.pushState(history.state, 'page', location.origin + location.pathname);
+        console.log(location)
+        console.log(history.state)
+
+      }
+
+
+
+    });
+  </script>
+</body>
+
+</html>
