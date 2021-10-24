@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row form-group m-2">
+    <div class="col-md-6">
+      <div class="input-group">
+        <input class="form-control"  [ngModel]="myDate | date: 'dd/MM/yyyy H:mm'" 
+        (ngModelChange)="myDate" (click)="onTogglePicker()"/>
+      </div>
+      <datetime-popup 
+        [value]="myDate"
+        (valueChange)="onValueChange($event)" 
+        [(showPopup)]="showPicker"
+        [showDate]="showDate" 
+        [showTime]="showTime" 
+        [closeButton]="closeButton"
+        [nowButton]="nowButton"
+        [clearButton]="clearButton">
+      </datetime-popup>
+    </div>
+  </div>
+</div>
