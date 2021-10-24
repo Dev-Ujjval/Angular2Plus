@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 col-sm-9">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>
+              Id
+            </th>
+            <th>
+              Email
+            </th>
+            <th>
+              Full Name
+            </th>
+            <th>
+              Image
+            </th>
+          </tr>
+
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of userList | paginate: config1" (click)="onRowClick(item)">
+            <td>
+              {{item.id}}
+            </td>
+            <td>
+              {{item.email}}
+            </td>
+            <td>
+              {{item.first_name}} {{item.last_name}}
+            </td>
+            <td>
+              <img src={{item.avatar}} height=90px; width="90px">
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+      <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+    </div>
+
+    <div class="col-md-3 col-sm-3" *ngIf="this.displayData.length > 0">
+      <table class="table" *ngFor="let item1 of displayData">
+        <tr>
+          <th>
+            Name
+          </th>
+          <td>
+            {{item1.first_name}} {{item1.last_name}}
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Email
+          </th>
+          <td>
+            {{item1.email}}
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Image
+          </th>
+          <td>
+            <img src={{item1.avatar}} height=90px; width="90px">
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</div>

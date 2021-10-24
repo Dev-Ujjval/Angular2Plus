@@ -1,0 +1,8 @@
+{
+  "pwa": {
+    "clientProject": "myPWA",
+    "skipInstall": false,
+    "directory": ".",
+    "project": "myPWA"
+  }
+}
