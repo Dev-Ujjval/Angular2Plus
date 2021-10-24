@@ -1,0 +1,33 @@
+<div class="container mt-10">
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <input type="button" value="PDF" (click)="captureScreen()" />&nbsp;
+        <input type="button" value="Excel" (click)="exportAsXLSX()" />
+      </div>
+    </div>
+    <div class="card-body" id="contentToConvert">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of data">
+                <th scope="row">{{row.id}}</th>
+                <td>{{row.first}}</td>
+                <td>{{row.last}}</td>
+                <td>{{row.handle}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <div class="card-footer">
+      Design By @271
+    </div>
+  </div>
+</div>
