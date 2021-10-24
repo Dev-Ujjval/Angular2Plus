@@ -1,0 +1,18 @@
+<div>
+  <input type="text" style="padding:8px;margin:15px auto;width:30%;" placeholder="Type to filter the name column..."
+    (keyup)="updateFilter($event)" />
+  <ngx-datatable
+   #table
+   class="material"
+   [columns]="columns"
+   [rows]="rows"
+   [columnMode]="'force'"
+   [headerHeight]="50"
+   [footerHeight]="50"
+   [rowHeight]="'auto'"
+   (activate)="onActivate($event)"
+   [limit]="7">
+  </ngx-datatable>
+</div>
+
+<router-outlet></router-outlet>
