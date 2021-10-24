@@ -1,0 +1,48 @@
+<div class="container mt-10">
+    <input type="button" class="btn btn-info" value="Child" [routerLink]="['/child']">
+  <div class="row mt-10">
+    
+
+    <div class="col-md-6">
+
+      <div>
+        <input type="text" (input)="onfChange($event.target.value)" placeholder="first name" #fname>
+      </div>
+
+      <div >
+        <input type="text" (input)="onlChange($event.target.value)" placeholder="last name" #lname>
+      </div>
+
+      <div class="mt-10">
+        <input type="button" class="btn btn-primary" value="Submit" (click)="submit(fname, lname)">
+      </div>
+
+    </div>
+
+    <div class="col-md-6">
+      <table class="table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>
+              FullName
+            </th>
+            <th>
+                Action  
+              </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data; let i = index" [attr.data-index]="i">
+            <td>
+              {{item.fname | uppercase}} {{item.lname | uppercase}}
+            </td>
+            <td>
+               <input class="btn btn-danger" type="button" value="remove" (click)="remove(i)">
+              </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

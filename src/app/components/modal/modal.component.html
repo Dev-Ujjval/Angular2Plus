@@ -1,0 +1,18 @@
+<div class="modal-header modal-block-primary">
+  <h4 class="modal-title">Are you sure?</h4>
+  <button type="button" class="close float-left" (click)="bsModalRef.hide()">
+    <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+  </button>
+</div>
+<div class="modal-body clearfix">
+  <div class="modal-icon">
+    <i class="fa fa-question-circle"></i>
+  </div>
+  <div class="modal-text">
+    <p>Unsaved Change?</p>
+  </div>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-default" (click)="action(false)">No</button>
+  <button class="btn btn-primary right" (click)="action(true)">Yes</button>
+</div>
