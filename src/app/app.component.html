@@ -1,0 +1,25 @@
+<h3 class="text-center">User Details</h3>
+<hr>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="email">Email</label>
+    <input type="email" [ngClass]="{'form-submitted': formSubmitted}" id="email" formControlName="email" placeholder="Enter email"/>
+  </div>
+  <div>
+    <label for="username">Username</label>
+    <input type="text" [ngClass]="{'form-submitted': formSubmitted}" id="username" formControlName="username"  placeholder="Username"/>
+  </div>
+  <div>
+    <label for="institution">Institution </label>
+    <input type="text" [ngClass]="{'form-submitted': formSubmitted}" id="institution" formControlName="institution" placeholder="Enter institution"/>
+  </div>
+  <div>
+    <label for="company">Company</label>
+    <input type="text" [ngClass]="{'form-submitted': formSubmitted}" id="company" formControlName="company" placeholder="Enter company"/>
+  </div>
+  <div>
+    <label for="salary">Salary</label>
+    <input type="text" [ngClass]="{'form-submitted': formSubmitted}" id="salary" formControlName="salary" placeholder="Enter salary"/>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
