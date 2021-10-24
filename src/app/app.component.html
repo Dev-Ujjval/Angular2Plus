@@ -1,0 +1,8 @@
+<ng-select [items]="cities" bindLabel="name" placeholder="Select city" [(ngModel)]="selectedCity">
+</ng-select>
+<p *ngIf="selectedCity">
+    Selected city: {{selectedCity | json}}
+</p>
+
+
+
