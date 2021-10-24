@@ -1,0 +1,28 @@
+<div class="card m-2">
+  <div class="card-header">
+    List
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <ng-select placeholder="Select Country" [items]="countryList" bindLabel="name" bindValue="code"
+          (change)="onCountryChange($event)">
+        </ng-select>
+      </div>
+      <div class="col">
+        <ng-select placeholder="Select Region" [items]="regionList" bindLabel="region" bindValue="country"
+          (change)="onRegionChange($event)">
+        </ng-select>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col">
+        <ng-select placeholder="Select City" [items]="cityList" bindLabel="city">
+        </ng-select>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
